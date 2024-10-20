@@ -1,31 +1,25 @@
 import React from "react";
 import "./navigation.css";
-import { IoHome } from "react-icons/io5";
-import { FaCircleInfo } from "react-icons/fa6";
-import { IoChatboxEllipses } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">
-            <IoHome />
+          <NavLink to="/" activeClassName="active">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">
-            <FaCircleInfo />
+          <NavLink to="/about" activeClassName="active">
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact">
-            <IoChatboxEllipses />
+          <NavLink to="/contact" activeClassName="active">
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
