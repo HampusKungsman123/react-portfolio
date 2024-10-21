@@ -3,11 +3,8 @@ import "./contact.css";
 import Swal from "sweetalert2";
 
 export default function Contact() {
-  const [result, setResult] = React.useState("");
-
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
     const formData = new FormData(event.target);
 
     formData.append("access_key", "5f1c0b8a-8726-46bf-9e56-97cdefb19c0c");
@@ -30,7 +27,13 @@ export default function Contact() {
       event.target.reset();
     } else {
       console.log("Error", data);
-      setResult(data.message);
+      Swal.fire({
+        title: "Something went wrong",
+        text: "Please try again",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#8d99ae",
+      });
     }
   };
 
